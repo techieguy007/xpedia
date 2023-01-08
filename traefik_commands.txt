@@ -1,0 +1,7 @@
+docker run -d -p 8080:8080 -p 80:80 -v C:\Users\Anmol\OneDrive\Documents\projects\traefik\traefik.yml:/etc/traefik/traefik.yml -v /var/run/docker.sock:/var/run/docker.sock --name traefik traefik:v2.9.5
+
+docker run --name Xampp -p 41061:22 -p 41062:81 -d -v C:\Users\Anmol\OneDrive\Documents\projects\traefik\www:/www tomsik68/xampp
+
+
+
+C:\Users\Anmol\OneDrive\Documents\projects\traefik

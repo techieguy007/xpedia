@@ -1,0 +1,7 @@
+FROM traefik
+
+COPY config/traefik-dynamic-conf.yml /etc/traefik/config.yml
+COPY config/traefik.yml /etc/traefik/traefik.yml
+
+EXPOSE 80
+EXPOSE 8080

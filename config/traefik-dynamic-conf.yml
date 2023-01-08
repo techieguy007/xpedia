@@ -1,0 +1,32 @@
+
+http:
+  routers:
+    xpedia-router:
+      rule: PathPrefix(`/www`)
+      service: xpedia
+      entrypoints:
+       - http
+    dashboard-router:
+      rule: PathPrefix(`/dashboard`)
+      service: dashboard
+      entrypoints:
+       - http
+  services:
+    xpedia:
+      loadBalancer:
+        healthCheck:
+          path: /www
+          interval: "5s"
+          timeout: "3s"
+        servers:
+          - url: "http://172.25.0.1:41062"
+          - url: "http://172.25.0.1:41062"
+    dashboard:
+      loadBalancer:
+        healthCheck:
+          path: /dashboard
+          interval: "5s"
+          timeout: "3s"
+        servers:
+          - url: "http://172.25.0.1:41062"
+          - url: "http://172.25.0.1:41062"
